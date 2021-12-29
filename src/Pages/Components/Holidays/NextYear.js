@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import IndeterminateCheckBoxIcon from '@mui/icons-material/IndeterminateCheckBox';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
-
+import Grid from '@mui/material/Grid';
 export default function NextYear() {
   const [value, setValue] = React.useState(null);
 
@@ -27,8 +27,26 @@ export default function NextYear() {
       >
          <AddCircleIcon />
 
-        <div>
-          <TextField id="outlined-basic" label="Holiday" variant="outlined" />
+         <Grid container spacing={2} columns={16}>
+
+            <Grid item xs={8}>
+            <TextField id="outlined-basic" label="Holiday" variant="outlined" />
+
+            </Grid>
+
+            <Grid item xs={8}>
+            
+        <DatePicker
+          label="Next year"
+          value={value}
+          onChange={(newValue) => {
+            setValue(newValue);
+          }}
+          renderInput={(params) => <TextField {...params} />}
+        />
+
+            </Grid>
+          
 
 
           <Button
@@ -45,15 +63,9 @@ export default function NextYear() {
           >
             clear
           </Button>
-        </div>
-        <DatePicker
-          label="Next year"
-          value={value}
-          onChange={(newValue) => {
-            setValue(newValue);
-          }}
-          renderInput={(params) => <TextField {...params} />}
-        />
+       
+          </Grid>
+       
         <IndeterminateCheckBoxIcon />
       </Box>
 

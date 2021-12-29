@@ -6,15 +6,16 @@ import DatePicker from '@mui/lab/DatePicker';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import { Typography } from '@mui/material';
+import Grid from '@mui/material/Grid';
 
 
 export default function Seasons() {
   const [value, setValue] = React.useState(null);
 
   return (
-    
+
     <LocalizationProvider dateAdapter={AdapterDateFns}>
-       <Box
+      <Box
         sx={{
           display: 'flex',
           justifyContent: 'flex-start',
@@ -23,31 +24,41 @@ export default function Seasons() {
           bgcolor: 'background.paper',
         }}
       >
-      <div>
-      <Typography  variant='h7' gutterBottom >Season 1</Typography>
-      
-      <DatePicker
-        label="Start Date"
-        value={value}
-        onChange={(newValue) => {
-          setValue(newValue);
-        }}
-        
-        renderInput={(params) => <TextField {...params} />
-    }
-      />
-       
-       <DatePicker
-        label="End Date"
-        value={value}
-        onChange={(newValue) => {
-          setValue(newValue);
-        }}
-        
-        renderInput={(params) => <TextField {...params} />
-    }
-      />
-       </div>
+
+        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 1, md: 1 }}>
+
+
+          <Grid item xs={1}>
+            <Typography variant='h7' gutterBottom >Season 1</Typography>
+          </Grid>
+
+          <Grid item xs={2}>
+            <DatePicker
+              label="Start Date"
+              value={value}
+              onChange={(newValue) => {
+                setValue(newValue);
+              }}
+
+              renderInput={(params) => <TextField {...params} />
+              }
+            />
+          </Grid>
+
+          <Grid item xs={2}>
+            <DatePicker
+              label="End Date"
+              value={value}
+              onChange={(newValue) => {
+                setValue(newValue);
+              }}
+
+              renderInput={(params) => <TextField {...params} />
+              }
+            />
+          </Grid>
+        </Grid>
+      </Box>
       <Button
         onClick={() => {
           alert('After submitting data cannot be deleted, would you like to proceed?');
@@ -62,10 +73,7 @@ export default function Seasons() {
       >
         clear
       </Button>
-     
-      
-      </Box>
-      
+
     </LocalizationProvider>
   );
 }

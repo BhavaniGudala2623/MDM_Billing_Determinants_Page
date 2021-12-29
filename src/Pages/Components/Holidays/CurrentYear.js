@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import Box from '@mui/material/Box';
 import IndeterminateCheckBoxIcon from '@mui/icons-material/IndeterminateCheckBox';
+import Grid from '@mui/material/Grid';
 
 export default function CurrentYear() {
   const [value, setValue] = React.useState(null);
@@ -25,10 +26,26 @@ export default function CurrentYear() {
       >
         <AddCircleIcon/>
         
-          <div>
-            <TextField id="outlined-basic" label="Holiday" variant="outlined" />
+        <Grid container spacing={2} columns={16}>
+          
 
-        
+             <Grid item xs={8}>
+          
+            <TextField id="outlined-basic" label="Holiday" variant="outlined" />
+              </Grid>
+            
+              <Grid item xs={8}>
+          
+              <DatePicker
+          label="Current year"
+          value={value}
+          onChange={(newValue) => {
+            setValue(newValue);
+          }}
+          renderInput={(params) => <TextField {...params} />}
+        />
+            </Grid>
+
           <Button
             onClick={() => {
               alert('After submitting data cannot be deleted, would you like to proceed?');
@@ -43,19 +60,13 @@ export default function CurrentYear() {
           >
             clear
           </Button>
-        </div>
+        
+        </Grid>
 
-        <DatePicker
-          label="Current year"
-          value={value}
-          onChange={(newValue) => {
-            setValue(newValue);
-          }}
-          renderInput={(params) => <TextField {...params} />}
-        />
+      
           <IndeterminateCheckBoxIcon />
         
-
+           
       </Box>
     
     </LocalizationProvider>
