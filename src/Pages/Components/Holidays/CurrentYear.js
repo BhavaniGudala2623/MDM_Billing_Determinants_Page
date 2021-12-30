@@ -31,13 +31,14 @@ export default function CurrentYear() {
 
              <Grid item xs={8}>
           
-            <TextField id="outlined-basic" label="Holiday" variant="outlined" />
+            <TextField id="outlined-basic" label="Holiday" variant="outlined"  />
               </Grid>
             
               <Grid item xs={8}>
           
               <DatePicker
           label="Current year"
+          size="small"
           value={value}
           onChange={(newValue) => {
             setValue(newValue);

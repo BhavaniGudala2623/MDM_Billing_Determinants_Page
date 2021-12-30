@@ -29,12 +29,13 @@ export default function Seasons() {
 
 
           <Grid item xs={1}>
-            <Typography variant='h7' gutterBottom >Season 1</Typography>
+            <Typography variant='h7' gutterBottom  >Season 1</Typography>
           </Grid>
 
           <Grid item xs={2}>
             <DatePicker
               label="Start Date"
+              variant="Standard" 
               value={value}
               onChange={(newValue) => {
                 setValue(newValue);
@@ -48,6 +49,8 @@ export default function Seasons() {
           <Grid item xs={2}>
             <DatePicker
               label="End Date"
+              size="small"
+              variant="Standard" 
               value={value}
               onChange={(newValue) => {
                 setValue(newValue);

@@ -10,7 +10,7 @@ import Box from '@mui/material/Box';
 import PreviousYear from './PreviousYear';
 import CurrentYear from './CurrentYear.js';
 import NextYear from './NextYear';
-
+import Demo from '../Demo';
 
 
 
@@ -92,6 +92,7 @@ export default function Holidays() {
         </TabPanel>
         <TabPanel value={value} index={2} dir={theme.direction}>
           <NextYear />
+          <Demo/>
         </TabPanel>
       </SwipeableViews>
     </Box>

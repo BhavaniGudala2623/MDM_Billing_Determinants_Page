@@ -23,7 +23,7 @@ export default function PreviousYear() {
       >
       <div>
      
-        <TextField id="outlined-basic" label="Holiday" variant="outlined" />
+        <TextField id="outlined-basic" label="Holiday" variant="outlined"  />
 
       
       <Button
@@ -43,6 +43,7 @@ export default function PreviousYear() {
       </div>
       <DatePicker
         label="Previous year"
+        size="small"
         value={value}
         onChange={(newValue) => {
           setValue(newValue);
